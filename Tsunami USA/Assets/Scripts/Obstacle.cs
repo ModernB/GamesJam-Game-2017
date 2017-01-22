@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     public int density;//Percentage in which it slows player down
     public int slowPlayerByTime;//In seconds
+    public AudioClip crash;
 
 	void Start ()
     {
@@ -23,6 +24,9 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            //play audio
+
+
             Destroy(this.gameObject);
         }
     }

@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     bool isGrounded;
 
     public delegate void playerAction();
-    public static event playerAction GameOver, GameWon;
+    public static event playerAction GameOver, GameWon, CheckpointHit;
     Vector3 spawn;
 
 	// Use this for initialization
@@ -46,9 +46,11 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            isGrounded = true;
-            
+            isGrounded = true;  
         }
+
+
+
 
         if (collision.gameObject.tag == "Obstacle")
         {
@@ -58,11 +60,6 @@ public class Player : MonoBehaviour
             Destroy(obs);
         }
 
-        if (collision.gameObject.tag == "Wave")
-        {
-            DamagePlayer(1);
-            Debug.Log("Lose");
-        }
 
 
 
@@ -76,23 +73,17 @@ public class Player : MonoBehaviour
             if (GameWon != null)
             {
                 GameWon();
-                Debug.Log("Win!");
             }
         }
 
-        if (other.gameObject.tag == "Wave")
-        {
-            Debug.Log("Game Over!");
-            //Game won, inform gamemanager
-            if (GameOver != null)
-            {
-                GameOver();
-                Debug.Log("Game Over!");
-            }
-        }
         if (other.gameObject.tag == "Checkpoint")
         {
-            //Animate background image to next image
+            Debug.Log("Hitpoint!");
+            if (CheckpointHit != null)
+            {
+                Destroy(other.gameObject);
+                CheckpointHit();
+            }
         }
 
     }
@@ -111,18 +102,6 @@ public class Player : MonoBehaviour
         this.transform.position = spawn;
     }
 
-    private void DamagePlayer(int x)
-    {
-        health -= x;
-        if (health <= 0)
-        {
-            //game over
-            if (GameOver != null)
-            {
-                GameOver();
-            }
 
-        }
-    }
 
 }

@@ -6,6 +6,7 @@ public class Wave : MonoBehaviour
 {
 
     bool hitPlayer = false;
+    bool canGo = false;
     public float speed;
     public Player p;
     public int hopForce;
@@ -21,7 +22,7 @@ public class Wave : MonoBehaviour
 
     void Update ()
     {
-        if (!hitPlayer)
+        if (!hitPlayer && canGo)
         {
             
            transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -44,8 +45,14 @@ public class Wave : MonoBehaviour
     public void ResetPostion()
     {
         hitPlayer = false;
+        canGo = false;
         this.transform.position = spawn;
 
+    }
+
+    public void canGoNow()
+    {
+        canGo = true;
     }
 
 

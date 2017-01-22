@@ -8,14 +8,19 @@ using UnityEngine.UI;
 [RequireComponent (typeof (Image))]
 public class GameManager : MonoBehaviour
 {
-    public GameObject start,end,player,wave;
+    public GameObject start,end,player;
+    public Wave w;
     float levelDistance,playerProgress, waveProgress;
-    bool isLevelOne;
+    bool isLevelOne, introComplete;
+
+
+
     //UI
     public Image playerBar, waveBar;
-    public GameObject UIPanel, tutorialPanel, winPanel, losePanel;
+    public GameObject UIPanel, tutorialPanel, winPanel, losePanel,introGif;
     public Button replayWin, replayLose;
     public static GameManager gm;
+    BackgroundTransition bgt;
 
     private void Awake()
     {
@@ -33,41 +38,37 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        
+        introComplete = false;
         //load scores, if none exist create a new save in playerprefs
         if (SceneManager.GetActiveScene().name == "LevelOne")
         {
             isLevelOne = true;
-
-                start = GameObject.Find("Start");
-            
-
-                end = GameObject.Find("Goal");
-           
-
-                player = GameObject.Find("Player");
-
-                wave = GameObject.Find("Wave");
-            
-            levelDistance = Vector3.Distance(start.transform.position, end.transform.position);
-
             //UI
             UIPanel = GameObject.Find("PlayerUI");
             tutorialPanel = GameObject.Find("Tutorial");
             winPanel = GameObject.Find("Win");
             losePanel = GameObject.Find("Lose");
 
-            replayWin =  GameObject.Find("WReplay").GetComponent<Button>();
-            replayLose = GameObject.Find("LReplay").GetComponent<Button>();
-            if (replayWin == null)
-            {
-                Debug.Log("wr gone");
-            }
+            introGif = GameObject.FindGameObjectWithTag("Intro");
+            StartCoroutine(FinishIntro());
+
+            start = GameObject.Find("Start");
+            end = GameObject.Find("Goal");
+            player = GameObject.Find("Player");
+            w = GameObject.Find("Wave").GetComponent<Wave>();
+            
+            levelDistance = Vector3.Distance(start.transform.position, end.transform.position);
+
+
+
+
+            bgt = GameObject.Find("BackgroundManager").GetComponent<BackgroundTransition>();
+
 
 
 
             UIPanel.SetActive(true);
-            tutorialPanel.SetActive(false);
+            //tutorialPanel.SetActive(false);
             winPanel.SetActive(false);
             losePanel.SetActive(false);
 
@@ -79,7 +80,6 @@ public class GameManager : MonoBehaviour
 
             Time.timeScale = 1;
 
-
         }
 
         
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 	void Update ()
     {
 
-        if (isLevelOne)
+        if (isLevelOne && introComplete)
         {
             //spawn player
             //Spawn Wave
@@ -103,10 +103,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void TrackScore(int score)
-    {
-
-    }
 
 
     public void OnWin()
@@ -124,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void OnLose()
     {
+        Debug.Log("Loose");
         UIPanel.SetActive(false);
         losePanel.SetActive(true);
         Time.timeScale = 0;
@@ -134,9 +131,10 @@ public class GameManager : MonoBehaviour
         //put player back at spawn
         Player p = player.GetComponent<Player>();
         p.ResetPostion();
-
-        Wave w = wave.GetComponent<Wave>();
+        bgt.ResetToStart();
+        //Wave w = wave.GetComponent<Wave>();
         w.ResetPostion();
+        w.canGoNow();
         //put wave back at spawn
 
         UIPanel.SetActive(true);
@@ -145,7 +143,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    void PauseGame()
+    void HitCheckpoint()
     {
 
     }
@@ -162,9 +160,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("playerlost");
             player = GameObject.Find("Player");
         }
-        if (wave == null)
+        if (w == null)
         {
-            wave = GameObject.Find("Wave");
+            w = GameObject.Find("Wave").GetComponent<Wave>();
         }
 
         if (playerBar == null)
@@ -178,7 +176,7 @@ public class GameManager : MonoBehaviour
         }
 
         playerProgress = Vector3.Distance(start.transform.position, player.transform.position)/levelDistance;
-        waveProgress = Vector3.Distance(start.transform.position, wave.transform.position)/levelDistance;
+        waveProgress = Vector3.Distance(start.transform.position, w.transform.position)/levelDistance;
         if (playerProgress <= 0)
         {
             playerBar.fillAmount = 0;
@@ -207,7 +205,20 @@ public class GameManager : MonoBehaviour
     }
 
 
+    IEnumerator FinishIntro()
+    {
+        //play Intro audio
+        //disenable intro object
+        //disable UI
+        UIPanel.SetActive(false);
+        yield return new WaitForSeconds(22);
+        introGif.SetActive(false);
+        introComplete = true;
+        Debug.Log("Go Wave!");
+        w.canGoNow();
+        
 
+    }
 
 
 

@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: df1ba349c96044f4493bba08940de1ca
+timeCreated: 1485103181
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: opensceneSpriteSheet_0
+    21300002: opensceneSpriteSheet_1
+    21300004: opensceneSpriteSheet_2
+    21300006: opensceneSpriteSheet_3
+    21300008: opensceneSpriteSheet_4
+    21300010: opensceneSpriteSheet_5
+    21300012: opensceneSpriteSheet_6
+    21300014: opensceneSpriteSheet_7
+    21300016: opensceneSpriteSheet_8
+    21300018: opensceneSpriteSheet_9
+    21300020: opensceneSpriteSheet_10
+    21300022: opensceneSpriteSheet_11
+    21300024: opensceneSpriteSheet_12
+    21300026: opensceneSpriteSheet_13
+    21300028: opensceneSpriteSheet_14
+    21300030: opensceneSpriteSheet_15
+    21300032: opensceneSpriteSheet_16
+    21300034: opensceneSpriteSheet_17
+    21300036: opensceneSpriteSheet_18
+    21300038: opensceneSpriteSheet_19
+    21300040: opensceneSpriteSheet_20
+    21300042: opensceneSpriteSheet_21
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1156
+        width: 606
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 3356
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 4640
+        y: 1156
+        width: 620
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 5293
+        y: 1156
+        width: 606
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 5941
+        y: 1156
+        width: 609
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 686
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 686
+        width: 606
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 686
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 684
+        width: 609
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 686
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 3356
+        y: 686
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 686
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 4640
+        y: 683
+        width: 620
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 5296
+        y: 686
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 5945
+        y: 686
+        width: 608
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 205
+        width: 609
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: opensceneSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 205
+        width: 606
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
