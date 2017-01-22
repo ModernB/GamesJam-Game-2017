@@ -15,12 +15,15 @@ public class Player : MonoBehaviour
     PowerUp currentPowerUp;
     bool isGrounded;
 
+    public delegate void playerAction();
+    public static event playerAction GameOver, GameWon;
+    Vector3 spawn;
 
 	// Use this for initialization
 	void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        
+        spawn = this.transform.position;
         currentPowerUp = PowerUp.None;
         health = 5;
 	}
@@ -58,12 +61,38 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Wave")
         {
             DamagePlayer(1);
+            Debug.Log("Lose");
         }
 
-        if (collision.gameObject.tag == "Finish")
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Finish")
         {
             //Game won, inform gamemanager
+            if (GameWon != null)
+            {
+                GameWon();
+                Debug.Log("Win!");
+            }
+        }
 
+        if (other.gameObject.tag == "Wave")
+        {
+            Debug.Log("Game Over!");
+            //Game won, inform gamemanager
+            if (GameOver != null)
+            {
+                GameOver();
+                Debug.Log("Game Over!");
+            }
+        }
+        if (other.gameObject.tag == "Checkpoint")
+        {
+            //Animate background image to next image
         }
 
     }
@@ -74,8 +103,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
-            Debug.Log("I'm Flying!");
         }
+    }
+
+    public void ResetPostion()
+    {
+        this.transform.position = spawn;
     }
 
     private void DamagePlayer(int x)
@@ -84,6 +117,12 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             //game over
+            if (GameOver != null)
+            {
+                GameOver();
+            }
+
         }
     }
+
 }

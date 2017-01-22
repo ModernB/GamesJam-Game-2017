@@ -7,19 +7,26 @@ public class Wave : MonoBehaviour
 
     bool hitPlayer = false;
     public float speed;
-    // Update is called once per frame
+    public Player p;
+    public int hopForce;
+    Rigidbody rb;
+    Vector3 spawn;
+
     private void Start()
     {
+        spawn = this.transform.position;
 
-        
     }
+
 
     void Update ()
     {
         if (!hitPlayer)
         {
-            //Move right
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            
+           transform.Translate(Vector3.right * speed * Time.deltaTime);
+           
+           
         }
 	}
 
@@ -31,5 +38,16 @@ public class Wave : MonoBehaviour
             Debug.Log("Hit PLayer!");
         }
     }
+
+  
+
+    public void ResetPostion()
+    {
+        hitPlayer = false;
+        this.transform.position = spawn;
+
+    }
+
+
 
 }
